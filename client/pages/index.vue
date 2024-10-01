@@ -3,8 +3,8 @@
         <h2>Главная страница</h2>
     </header>
     <main>
-        <article v-for="(post,index) in posts" :key="post.id>
-            {{ posts.title }}
+        <article v-for="(post,index) in posts" :key="post.id">
+            <h3>{{ posts.title }}</h3>
             <img src='https://i.pinimg.com/originals/8e/57/86/8e578585b383dc11b'> 
             <ul> 
                 <li v-for="tag in post.tags" :key="tag.id">
