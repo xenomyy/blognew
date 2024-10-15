@@ -1,12 +1,15 @@
 <template>
     <main>
         <h1>{{ post.title }}</h1>
-        <img :src=base_url+post.img.url alt="">
+        <img :src=base_url+post.img.url :alt=post.img.alternativeText>
         <div v-html="mark"></div>
     </main>
 </template>
 
-<script setup>
+<script setup> 
+    import MarkdownIt from "markdown-it";
+    const markdown = new MarkdownIt()
+
     const { id } = useRoute().params
 
     const api = await $fetch('http://localhost:1337/api/posts?populate=*')
