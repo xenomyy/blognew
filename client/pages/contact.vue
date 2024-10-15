@@ -1,9 +1,5 @@
 <template>
-    <div>
+    <main>
         <h2>Контакты</h2>
-    </div>
+    </main>
 </template>
-
-<script setup>
-
-</script>
