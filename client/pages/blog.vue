@@ -20,10 +20,10 @@
 </template>
 
 <script setup>
-const api = await $fetch('http://localhost:1337/api/posts?populate=*')
+const api = await $fetch('http://localhost:1338/api/posts?populate=*')
 const posts = api.data
 
-const base_url = "http://localhost:1337"
+const base_url = "http://localhost:1338"
 </script>
 
 <style scoped>

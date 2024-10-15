@@ -16,11 +16,11 @@
 <script setup>
   const { id } = useRoute().params
 
-  const api = await $fetch(`http://localhost:1337/api/categories/${id}?populate=posts.img`)
+  const api = await $fetch(`http://localhost:1338/api/categories/${id}?populate=posts.img`)
   // const filteredPosts = api.data.filter(post => post.id == id)
   const posts = api.data.posts
 
-  const base_url = 'http://localhost:1337'
+  const base_url = 'http://localhost:1338'
 
   const apiConfig = await $fetch(`${base_url}/api/config?populate=*`)
   const config = apiConfig.data

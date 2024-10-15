@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-  const base = 'http://localhost:1337' 
+  const base = 'http://localhost:1338' 
   const api = await $fetch(`${base}/api/config?populate=*`)
   const config = api.data
 
