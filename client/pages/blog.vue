@@ -1,8 +1,10 @@
 <template>
-  <h2>Блог</h2>
-
   <main>
-    <article v-for="(post, index) in posts" :key="post.id">
+    <h2>Блог</h2>
+    <article v-for="(post, index) in posts" :key="post.id" class="max-w-sm bg-white ">
+      <a href="#">
+        <img :src="base_url + post.img.url" class="rounded-t-lg"  :alt="post.img.alternativeText">
+      </a>
       <h3>{{ post.title }}</h3>
       <div class="link">
         <img :src="base_url + post.img.url" :alt=post.img.alternativeText>
@@ -148,28 +150,6 @@ article h3 {
   text-decoration: underline;
 }
 </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

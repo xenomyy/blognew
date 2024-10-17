@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+  }
+  
+  html, body, #__nuxt {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  main {
+    flex: 1 1 auto;
+  }
+.articles{
+    display: grid;
+    grid-template-columns: repeat (auto-fit, minmax());
+    grid-auto-rows: minmax ();
+    grid-template-rows: repeat (auto-fit, minmax());
+    gap: 40px;
+    padding: 40px;
+}
+article p, article h5{
+    display: -webkit-box;
+    -webkit-line-clamp: ;
+    overflow: hidden;
+    text-wrap: wrap;
+}
