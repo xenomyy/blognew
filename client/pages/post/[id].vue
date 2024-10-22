@@ -44,13 +44,12 @@
         font-size: 24px;
     }
 
-
-
     main img {
         width: 100%;
         height: 320px;
         object-fit: cover;
     }
+    
     li::before {
         content: ">>";
         margin-right: 10px;
@@ -75,11 +74,11 @@ const markdown = new MarkdownIt();
 
 const { id } = useRoute().params
 
-const api = await $fetch(`http://localhost:1338/api/posts/${id}?populate=*`);
+const api = await $fetch(`http://localhost:1337/api/posts/${id}?populate=*`);
 const post = api.data;
 const mark = markdown.render(post.body);
 
-const base_url = 'http://localhost:1338'
+const base_url = 'http://localhost:1337'
 
 const apiConfig = await $fetch(`${base_url}/api/config?populate=*`)
 const config = apiConfig.data

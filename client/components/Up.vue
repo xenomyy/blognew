@@ -11,8 +11,10 @@
 
 <script setup>
 
+// Определите свойство isVisible 
 const isVisible = ref(false)
 
+// Метод для прокрутки вверх
 const scrollToTop = () => {
     window.scrollTo({
         top: 0,
@@ -20,13 +22,14 @@ const scrollToTop = () => {
     })
 }
 
+// Слушатели событий для прокрутки
 const handleScroll = () => {
     isVisible.value = window.scrollY > 200
 }
 
 onMounted(() => {
     window.addEventListener('scroll', handleScroll)
-    handleScroll() 
+    handleScroll() // Проверка при монтировании.
 })
 
 onUnmounted(() => {

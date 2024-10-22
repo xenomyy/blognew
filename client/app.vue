@@ -1,14 +1,13 @@
 <template>
-  <NuxtLoadingIndicator duration="5000" />
+  <NuxtLoadingIndicator throttle="0" />
   <Navbar />
   <NuxtPage />
-  <Footer />
   <Up />
-  <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+  <Footer />
 </template>
 
 <script setup>
-  const base = 'http://localhost:1338' 
+  const base = 'http://localhost:1337' 
   const api = await $fetch(`${base}/api/config?populate=*`)
   const config = api.data
 
