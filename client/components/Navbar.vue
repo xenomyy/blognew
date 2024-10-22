@@ -3,7 +3,7 @@
     <nav class="bg-white border-gray-200 dark:bg-gray-900">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
     <a href="http://localhost:3000/" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <img src="http://localhost:1337/uploads/balanced_diet_686b9878eb.ico" class="h-8" alt="Flowbite Logo" />
+        <img src="http://localhost:1338/uploads/balanced_diet_686b9878eb.ico" class="h-8" alt="Flowbite Logo" />
         <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">NuxtVerse</span>
     </a>
     <div class="flex md:order-2">
@@ -40,8 +40,8 @@
             </div>
             <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 <li><NuxtLink to="/" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Главная</NuxtLink></li>
-                <li><NuxtLink to="/blog" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Блог</NuxtLink></li>
-                <li><NuxtLink to="/contact" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Контакты</NuxtLink></li>
+                <li><NuxtLink to="/blog" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" :class="{'text-blue-500': isActive('blog')}">Блог</NuxtLink></li>
+                <li><NuxtLink to="/contact" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" :class="(route.path === '/contact') ? activeClass : ''">Контакты</NuxtLink></li>
             </ul>
         </div>
     </div>
@@ -51,8 +51,8 @@
 
 <script setup>
 const route = useRoute()
+const path =  route.path
+const isActive = (path) => route.path.split('/')
 
-if(route.path === 'contact') {
-
-} 
+const activeClass = ref('tet-blue-500')
 </script>
