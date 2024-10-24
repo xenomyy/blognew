@@ -1,14 +1,13 @@
 <template>
-    <!-- хлебные крошки -->
-    <nav>
-        <ul>
+    <main class="max-w-screen-xl min-w-[48rem] lg:min-w-[56rem] mx-auto py-2">
+        <nav class="flex" aria-label="Breadcrumb">
+        <ol>
             <li><NuxtLink to="/blog">Блог</NuxtLink></li>
             <li><NuxtLink :style="'background:'+post.categories[0].bg" :to="'/category/' + post.categories[0].documentId">{{ post.categories[0].title }}</NuxtLink></li>
             <li><strong>{{ post.title }}</strong></li>
-        </ul>
+        </ol>
     </nav>
-    <!-- тело статьи -->
-    <main>
+
         <h1>{{ post.title }}</h1>
         <p class="date">Дата публикации: <span>{{ post.publishedAt }}</span></p>
         <img :src=base_url+post.img.url :alt=post.img.alternativeText>

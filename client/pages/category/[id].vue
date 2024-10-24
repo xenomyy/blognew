@@ -1,6 +1,5 @@
 <template>
-    <h2>{{ api.data.title }}</h2>
-
+    <h2 class="text-4xl fnot-extrabold my-4 dark:text-white">{{ api.data.title }}</h2>
     <main>
     <article v-for="(post, index) in posts" :key="post.id">
       <h3>{{ post.title }}</h3>
@@ -22,12 +21,12 @@
 <script setup>
   const { id } = useRoute().params
 
-  const api = await $fetch(`http://localhost:1337/api/categories/${id}?populate=posts.img&populate=posts.categories`)
+  const api = await $fetch(`http://localhost:1338/api/categories/${id}?populate=posts.img&populate=posts.categories`)
  
   // const filteredPosts = api.data.filter(post => post.id == id)
   const posts = api.data.posts
 
-  const base_url = 'http://localhost:1337'
+  const base_url = 'http://localhost:1338'
 
   const apiConfig = await $fetch(`${base_url}/api/config?populate=*`)
   const config = apiConfig.data
